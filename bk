@@ -1,0 +1,17 @@
+language: python
+
+services:
+  - docker
+
+before_install:
+  - touch .env
+  - echo SECRET_KEY=$SECRET_KEY >> .env
+  - echo DEBUG=$DEBUG >> .env
+  - echo POSTGRES_USER=$POSTGRES_USER >> .env
+  - echo POSTGRES_PASSWORD=$POSTGRES_PASSWORD >> .env
+  - docker-compose up --build -d
+
+script:
+  - docker-compose exec web python3 manage.py makemigrations
+  - docker-compose exec web python3 manage.py migrate
+  - docker-compose exec web python3 manage.py test
