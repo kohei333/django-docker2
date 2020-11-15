@@ -1,4 +1,4 @@
 # django-docker2
 
-FAILS!!!
+Try pull request!!!
 I made application with docker, postgresql and Travis CI.
