@@ -1,3 +1,1 @@
-# django-docker
-
-I made application with docker, postgresql, CI tool.
+I made application with docker, postgresql and travis CI!!
