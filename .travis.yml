@@ -9,6 +9,7 @@ before_install:
   - echo DEBUG=$DEBUG >> .env
   - echo POSTGRES_USER=$POSTGRES_USER >> .env
   - echo POSTGRES_PASSWORD=$POSTGRES_PASSWORD >> .env
+  - cat .env
   - docker-compose up --build -d
 
 script:
