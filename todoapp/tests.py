@@ -13,4 +13,4 @@ class TodoModelTestCase(TestCase):
 
 class MathTestCase(TestCase):
 	def test_bad_maths(self):
-		self.assertEqual(1+1, 2)
+		self.assertEqual(1+1, 3)
