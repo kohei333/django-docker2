@@ -1,4 +1,4 @@
-#language: python
+language: python
 
 sudo: required
 
@@ -17,3 +17,15 @@ script:
   - docker-compose exec web python3 manage.py makemigrations
   - docker-compose exec web python3 manage.py migrate
   - docker-compose exec web python3 manage.py test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-1"
+  app: "kohei-todo"
+  env: "KoheiTodo-env"
+  bucket_name: "elasticbeanstalk-ap-northeast-1-580481854598"
+  bucket_path: "kohei-todo"
+  on:
+    branch: master
+  access_key_id: "$AWSAccessKeyId"
+  secret_access_key: "$AWSSecretKey"
